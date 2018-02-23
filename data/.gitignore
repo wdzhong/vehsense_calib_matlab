@@ -1,0 +1,9 @@
+# we don't want to track files under this folder
+# but we do want to track this folder itself
+# git can not track empty folder
+# so that we have to add something, like this .gitignore
+
+*
+*/
+
+!.gitignore
