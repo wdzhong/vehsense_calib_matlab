@@ -1,6 +1,9 @@
+function smartphone_data_process(tripFolder)
+
 %Read files
 
-[data_file_raw_acc,data_file_raw_lin_acc,data_file_raw_gyro,data_file_gps,data_file_obd] = ReadRawData('VehSenseDataThu Oct 05 22:13:52 EDT 2017Weida');
+%[data_file_raw_acc,data_file_raw_lin_acc,data_file_raw_gyro,data_file_gps,data_file_obd] = ReadRawData('VehSenseDataThu Oct 05 22:13:52 EDT 2017Weida');
+[data_file_raw_acc,data_file_raw_lin_acc,data_file_raw_gyro,data_file_gps,data_file_obd] = ReadRawData(tripFolder);
 
 
 %reading raw_gps data
@@ -14,8 +17,6 @@ plot(time_gps,gps_bearing)
 
 % figure
 % plot(time_gps,gps_bearing)
-
-
 
 %reading OBD data
 [time_obd,obd_speed] = getOBDData(data_file_obd);
@@ -61,10 +62,6 @@ acc_phases = getACCPhases(obd_speed,time_obd);
 decc_phases = getDECCPhases(obd_speed,time_obd);
 
 obd_start_time = time_obd(1,1);
-
-
-
-
 
 
 %Read raw acc data
@@ -801,3 +798,5 @@ plot(time_raw_gyro(my_strt_ind:my_end_ind,1),my_rad_profile)
 
 figure
 plot(time_raw_gyro(my_strt_ind:my_end_ind,1),my_rad_profile_x_acc)
+
+end
