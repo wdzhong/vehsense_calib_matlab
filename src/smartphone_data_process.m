@@ -720,11 +720,11 @@ my_disp_prof = GetArcLengthOfCurve(my_vel_prof);
 total_disp = sum(my_disp_prof);
 
 heavy = zeros(2519,1);
-sum = 0;
+ssum = 0;
 
 for i=1:2519
-    sum = sum + my_disp_prof(i,1);
-    heavy(i,1) = sum;
+    ssum = ssum + my_disp_prof(i,1);
+    heavy(i,1) = ssum;
 end
     
 
